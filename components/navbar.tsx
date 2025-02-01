@@ -139,15 +139,10 @@ export default function Navbar() {
               />
             </Link>
 
-            <nav className="hidden md:flex items-center space-x-6 text-[#24388F] font-bold">
+            <nav className="hidden md:flex items-center space-x-6 text-[#24388F] font-extrabold">
               {navItems.map((item) => renderNavItem(item))}
-              <Button asChild className="bg-[#24388F] font-bold">
-                <Link
-                  href="/contact"
-                  className="bg-[#24388F] font-bold text-white px-8 py-6 rounded-3xl hover:bg-[#1A2C7C] transition-colors"
-                >
-                  CONTACT US
-                </Link>
+              <Button asChild className="bg-[#24388F] hover:bg-[#1A2C7C] text-white font-bold rounded-full px-8 py-6">
+                <Link href="/contact">CONTACT US</Link>
               </Button>
             </nav>
 
@@ -155,7 +150,7 @@ export default function Navbar() {
               {mobileMenuOpen ? (
                 <X className="h-6 w-6 text-gray-700" />
               ) : (
-                <Menu className="h-6 w-6 text-[#24388F] font-bold" />
+                <Menu className="h-6 w-6 text-[#24388F] font-extrabold" />
               )}
             </button>
           </div>
@@ -176,16 +171,14 @@ export default function Navbar() {
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
-        <div className="flex flex-col h-full pt-20 pb-6 px-4 text-[#24388F] font-bold">
+        <div className="flex flex-col h-full pt-20 pb-6 px-6 py-6 text-[#24388F] font-bold">
           <nav className="flex-1 space-y-4">
             {navItems.map((item) => renderNavItem(item, true))}
-            <Link
-              href="/contact"
-              className="block py-3 px-6 mt-4 text-base font-bold text-white bg-[#24388F] rounded-3xl text-center hover:bg-[#1A2C7C] transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              CONTACT US
-            </Link>
+            <Button asChild className="w-full bg-[#24388F] hover:bg-[#1A2C7C] text-white font-extrabold rounded-full mt-4">
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                CONTACT US
+              </Link>
+            </Button>
           </nav>
         </div>
       </div>

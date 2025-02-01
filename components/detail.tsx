@@ -49,7 +49,7 @@ const SplitLayout = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
-            className="bg-blue-800 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition"
+            className="bg-[#24388F] text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition"
           >
             Learn More
           </motion.button></Link> 

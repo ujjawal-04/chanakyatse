@@ -53,7 +53,7 @@ const LegalServicesSplit = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
-            className="font-serif text-4xl sm:text-5xl lg:text-7xl mb-6 text-left text-blue-900 leading-tight"
+            className="font-bold text-black sm:text-5xl lg:text-7xl mb-6 text-left leading-tight"
           >
             Excellence in Legal Services
           </motion.h1>
@@ -61,7 +61,7 @@ const LegalServicesSplit = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
-            className="text-xl lg:text-2xl text-blue-800 mb-8"
+            className="text-2xl lg:text-3xl text-black mb-8 font-serif"
           >
             Premier law firm serving clients across the UAE with expertise in corporate, commercial, and civil law
           </motion.p>
@@ -71,11 +71,11 @@ const LegalServicesSplit = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 1.5 }}
-              className="bg-blue-800 text-white text-lg px-8 py-4 rounded-xl shadow-lg hover:bg-blue-700 transition"
+              className="bg-slate-900 text-white font-bold text-lg px-8 py-4 rounded-none shadow-lg hover:bg-slate-700 transition"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Schedule a Consultation
+              SCHEDULE A CONSULTATION
             </motion.button>
           </Link>
         </div>
@@ -100,22 +100,22 @@ const LegalServicesSplit = () => {
           className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full max-w-2xl"
         >
           {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="bg-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-xl border-2 border-blue-100"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 * index }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-2">
-                {stat.number}
-              </h3>
-              <p className="text-blue-600 text-lg lg:text-xl">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
+  <motion.div
+    key={index}
+    className="bg-slate-900 p-6 sm:p-8 lg:p-10 rounded-none shadow-xl border-2 border-blue-100 flex flex-col items-center text-center"
+    initial={{ opacity: 0, y: 20 }}
+    animate={isInView ? { opacity: 1, y: 0 } : {}}
+    transition={{ delay: 0.2 * index }}
+    whileHover={{ scale: 1.05 }}
+  >
+    <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2 text-center">
+      {stat.number}
+    </h3>
+    <p className="text-white text-lg font-bold lg:text-xl text-center">
+      {stat.label}
+    </p>
+  </motion.div>
+))}
         </motion.div>
       </motion.div>
 

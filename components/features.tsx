@@ -77,7 +77,7 @@ export default function Features() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
-      className="relative overflow-hidden py-20 bg-blue-900"
+      className="relative overflow-hidden py-20 bg-[#070D20]"
     >
       {/* Background Vector Elements */}
       <div className="absolute inset-0 opacity-10">
@@ -130,14 +130,14 @@ export default function Features() {
             >
               <motion.div
                 variants={hoverVariants}
-                className="bg-white rounded-2xl p-6 h-full shadow-xl relative overflow-hidden"
+                className="bg-white rounded-none p-6 h-full shadow-xl relative overflow-hidden"
               >
                 <div className="relative z-10">
-                  <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center mx-auto bg-gradient-to-br from-blue-400 to-blue-600">
-                    <item.icon className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center mx-auto bg-white">
+                    <item.icon className="w-14 h-14 text-black bg-white" />
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-800">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
@@ -162,7 +162,7 @@ export default function Features() {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="px-8 py-3 bg-white text-blue-800 rounded-full font-semibold shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="px-8 py-3 bg-white text-[bg-[#070D20]] rounded-none font-semibold shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               See More Services
             </motion.button>

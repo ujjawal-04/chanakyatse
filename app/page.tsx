@@ -190,7 +190,7 @@ const Page = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-20"
+            className='mt-20'
           >
             <Info />
           </motion.div>
@@ -200,7 +200,7 @@ const Page = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className=""
+            className="mt-20"
           >
             <LegalServicesSplit />
           </motion.div>
@@ -210,7 +210,7 @@ const Page = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className=" mb-20"
+            className="mt-20 mb-20"
           >
             <Detail />
           </motion.div>
