@@ -1,10 +1,10 @@
 "use client"
-import { useState, useEffect, useRef } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { Menu, X, ChevronDown } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { useState, useEffect, useRef } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Menu, X, ChevronDown } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 type NavItem = {
   name: string
@@ -13,25 +13,25 @@ type NavItem = {
 }
 
 const navItems: NavItem[] = [
-  { name: 'HOME', href: '/' },
-  { name: 'ABOUT US', href: '/about' },
-  { name: 'SERVICES', href: '/services' },
+  { name: "HOME", href: "/" },
+  { name: "ABOUT US", href: "/about" },
+  { name: "SERVICES", href: "/services" },
   {
-    name: 'ASSOCIATIONS',
-    href: '#',
+    name: "ASSOCIATIONS",
+    href: "#",
     dropdown: [
-      { name: 'Adv. Bindu S. Chettur', href: 'https://binduschettur.com/' },
-      { name: 'MSA', href: 'https://binduschettur.com/mohamed-salman-advocate-legal-consultants/' },
-      { name: 'Lamer Capital Ltd', href: 'https://lamercapital.com/' },
+      { name: "Adv. Bindu S. Chettur", href: "https://binduschettur.com/" },
+      { name: "MSA", href: "https://binduschettur.com/mohamed-salman-advocate-legal-consultants/" },
+      { name: "Lamer Capital Ltd", href: "https://lamercapital.com/" },
     ],
   },
   {
-    name: 'RESOURCES',
-    href: '#',
+    name: "RESOURCES",
+    href: "#",
     dropdown: [
-      { name: 'News', href: '/news' },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Articles', href: '/articles' },
+      { name: "News", href: "/news" },
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "Articles", href: "/articles" },
     ],
   },
 ]
@@ -44,12 +44,12 @@ export default function Navbar() {
 
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset"
     }
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset"
     }
   }, [mobileMenuOpen])
 
@@ -75,21 +75,25 @@ export default function Navbar() {
       return (
         <div
           key={item.name}
-          className={`relative ${mobile ? 'w-full' : ''}`}
+          className={`relative ${mobile ? "w-full" : ""}`}
           onMouseEnter={() => handleMouseEnter(item.name)}
           onMouseLeave={handleMouseLeave}
         >
           <button
-            className={`flex items-center ${mobile ? 'w-full py-3 text-base font-medium border-b border-gray-200' : 'text-sm font-medium'} hover:text-primary transition-colors`}
+            className={`flex items-center ${mobile ? "w-full py-3 text-base font-bold border-b border-blue-500" : "text-sm font-bold"} hover:text-primary transition-colors`}
             onClick={() => mobile && toggleDropdown(item.name)}
           >
             {item.name}
-            <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${openDropdown === item.name ? 'rotate-180' : ''}`} />
+            <ChevronDown
+              className={`ml-1 h-4 w-4 transition-transform ${openDropdown === item.name ? "rotate-180" : ""}`}
+            />
           </button>
           {(openDropdown === item.name || (!mobile && openDropdown === item.name)) && (
             <div
-              ref={(el) => { dropdownRefs.current[item.name] = el }}
-              className={`${mobile ? 'mt-2 ml-4' : 'absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md '}`}
+              ref={(el) => {
+                dropdownRefs.current[item.name] = el
+              }}
+              className={`${mobile ? "mt-2 ml-4" : "absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md "}`}
               onMouseEnter={() => handleMouseEnter(item.name)}
               onMouseLeave={handleMouseLeave}
             >
@@ -97,7 +101,7 @@ export default function Navbar() {
                 <Link
                   key={subItem.name}
                   href={subItem.href}
-                  className={`block ${mobile ? 'py-2' : 'px-4 py-2'} text-sm hover:bg-gray-100 transition-colors`}
+                  className={`block ${mobile ? "py-2" : "px-4 py-2"} text-sm font-bold hover:bg-gray-100 transition-colors`}
                   onClick={() => mobile && setMobileMenuOpen(false)}
                 >
                   {subItem.name}
@@ -112,7 +116,7 @@ export default function Navbar() {
       <Link
         key={item.name}
         href={item.href}
-        className={`${mobile ? 'block py-3 text-base font-medium border-b border-gray-200' : 'text-sm font-medium'} hover:text-primary transition-colors`}
+        className={`${mobile ? "block py-3 text-base font-bold border-b border-gray-200" : "text-sm font-bold"} hover:text-primary transition-colors`}
         onClick={() => mobile && setMobileMenuOpen(false)}
       >
         {item.name}
@@ -134,24 +138,24 @@ export default function Navbar() {
                 className="w-auto h-12 sm:h-16"
               />
             </Link>
-            
-            <nav className="hidden md:flex items-center space-x-6">
+
+            <nav className="hidden md:flex items-center space-x-6 text-[#24388F] font-bold">
               {navItems.map((item) => renderNavItem(item))}
-              <Button asChild className='bg-[#24388F]'>
-                <Link href="/contact" className="bg-[#24388F] text-white px-4 py-2 rounded-md hover:bg-[#1A2C7C] transition-colors">
+              <Button asChild className="bg-[#24388F] font-bold">
+                <Link
+                  href="/contact"
+                  className="bg-[#24388F] font-bold text-white px-8 py-6 rounded-3xl hover:bg-[#1A2C7C] transition-colors"
+                >
                   CONTACT US
                 </Link>
               </Button>
             </nav>
 
-            <button
-              className="md:hidden z-50"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
+            <button className="md:hidden z-50" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? (
                 <X className="h-6 w-6 text-gray-700" />
               ) : (
-                <Menu className="h-6 w-6 text-gray-700" />
+                <Menu className="h-6 w-6 text-[#24388F] font-bold" />
               )}
             </button>
           </div>
@@ -161,7 +165,7 @@ export default function Navbar() {
       <div
         className={cn(
           "fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300 overflow-x-hidden",
-          mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none",
         )}
         onClick={() => setMobileMenuOpen(false)}
       />
@@ -169,15 +173,15 @@ export default function Navbar() {
       <div
         className={cn(
           "fixed top-0 left-0 bottom-0 w-full max-w-[300px] bg-white z-50 md:hidden transform transition-transform duration-300 ease-in-out overflow-y-auto overflow-x-hidden",
-          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full",
         )}
       >
-        <div className="flex flex-col h-full pt-20 pb-6 px-4">
+        <div className="flex flex-col h-full pt-20 pb-6 px-4 text-[#24388F] font-bold">
           <nav className="flex-1 space-y-4">
             {navItems.map((item) => renderNavItem(item, true))}
             <Link
               href="/contact"
-              className="block py-3 mt-4 text-base font-medium text-white bg-[#24388F] rounded-md text-center hover:bg-[#1A2C7C] transition-colors"
+              className="block py-3 px-6 mt-4 text-base font-bold text-white bg-[#24388F] rounded-3xl text-center hover:bg-[#1A2C7C] transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               CONTACT US
@@ -188,3 +192,4 @@ export default function Navbar() {
     </>
   )
 }
+

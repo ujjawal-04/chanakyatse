@@ -180,7 +180,7 @@ const Page = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="mt-10"
+            className="mt-0"
           >
             <Split />
           </motion.div>
