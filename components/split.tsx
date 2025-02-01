@@ -28,7 +28,7 @@ const SplitLayout = () => {
           </motion.div>
 
           {/* Text Content */}
-          <div className="flex-grow flex flex-col justify-center items-start p-10">
+          <div className="flex-grow flex flex-col justify-center items-start p-6">
             <div className="bg-[#0A0B1E]/70 p-4">
               <motion.h1
                 initial={{ y: 50, opacity: 0 }}
@@ -90,9 +90,9 @@ const SplitLayout = () => {
 
         {/* Content */}
         <div className="absolute inset-0 flex items-center">
-          <div className="bg-[#0A0B1E]/70 pr-80 py-6">
+          <div className="bg-[#0A0B1E]/70 pr-96 py-6">
             <div className="relative z-10 flex flex-col justify-center items-start max-w-xl mx-auto">
-              <div className="relative bg-[#101743] pl-2 pr-12 py-2">
+              <div className="relative bg-[#101743] pl-2 pr-20 py-2">
                 <motion.h1
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
